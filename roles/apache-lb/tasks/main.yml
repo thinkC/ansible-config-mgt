@@ -60,15 +60,16 @@
     state: present
   
 
-- 
+- name: "restart apache2"
   become: true
   name: apache2
   state: present
 - 
-  name: copy to over-write
+  name: "copy to over-write"
   command: "cp -r  /home/ubuntu/backup/000-default.conf. /etc/apache2/sites-available/"
   name: "copy 000-default.conf"
-- 
+
+- name: "restart apache2"
   become: true
   name: apache2
   state: present
