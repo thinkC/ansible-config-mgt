@@ -41,9 +41,9 @@
   become: true
   ansible.builtin.yum: 
     name: 
-      - update
-      - apache2
-      - libxml2-dev
+      # - update
+      - httpd
+      # - libxml2-dev
     state: present
   
 - name: "enable rewrite module"
