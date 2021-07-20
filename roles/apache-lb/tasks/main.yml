@@ -1,14 +1,53 @@
+# --- 
+# - 
+#   ansible.builtin.yum: 
+#     name: 
+#       - update
+#       - apache2
+#       - libxml2-dev
+#     state: present
+#   become: true
+#   name: "install apache"
+# - 
+#   apache2_module: 
+#     ignore_configcheck: true
+#     name: 
+#       - rewrite
+#       - proxy
+#       - proxy_balancer
+#       - proxy_http
+#       - headers
+#       - lbmethod_bytraffic
+#     state: present
+#   become: true
+#   name: "enable rewrite module"
+# - 
+#   become: true
+#   name: apache2
+#   state: present
+# - 
+#   become: true
+#   command: "cp -r  /home/ubuntu/backup/000-default.conf. /etc/apache2/sites-available/"
+#   name: "copy 000-default.conf"
+# - 
+#   become: true
+#   name: apache2
+#   state: present
+
+
+
 --- 
-- 
+- name: "Install apache"
+  become: true
   ansible.builtin.yum: 
     name: 
       - update
       - apache2
       - libxml2-dev
     state: present
+  
+- name: "enable rewrite module"
   become: true
-  name: "install apache"
-- 
   apache2_module: 
     ignore_configcheck: true
     name: 
@@ -19,14 +58,14 @@
       - headers
       - lbmethod_bytraffic
     state: present
-  become: true
-  name: "enable rewrite module"
+  
+
 - 
   become: true
   name: apache2
   state: present
 - 
-  become: true
+  name: copy to over-write
   command: "cp -r  /home/ubuntu/backup/000-default.conf. /etc/apache2/sites-available/"
   name: "copy 000-default.conf"
 - 
