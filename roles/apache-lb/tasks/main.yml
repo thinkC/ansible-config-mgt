@@ -1,0 +1,44 @@
+# tasks file for apache-lb
+
+---
+- name: install apache
+  become: true
+  ansible.builtin.yum:
+    name:
+      - update
+      - apache2
+      - libxml2-dev
+    state: present
+
+- name: enable rewrite module
+  become: true
+  ansible.builtin.yum:
+  apache2_module:
+    name:
+      - rewrite
+      - proxy
+      - proxy_balancer
+      - proxy_http
+      - headers
+      - lbmethod_bytraffic
+    state: present
+    ignore_configcheck: True
+
+- name: restart apache2
+  become: true
+  ansible.builtin.git:
+    name:
+      - apache2
+    state: present
+
+- name: copy 000-default.conf
+  become: true
+  command: cp -r  /home/ubuntu/backup/000-default.conf. /etc/apache2/sites-available/
+
+- name: restart apache2
+  become: true
+  ansible.builtin.git:
+    name:
+      - apache2
+    state: present
+
