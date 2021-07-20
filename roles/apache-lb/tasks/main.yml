@@ -12,7 +12,6 @@
 
 - name: enable rewrite module
   become: true
-  ansible.builtin.yum:
   apache2_module:
     name:
       - rewrite
@@ -26,7 +25,6 @@
 
 - name: restart apache2
   become: true
-  ansible.builtin.git:
     name:
       - apache2
     state: present
@@ -37,7 +35,6 @@
 
 - name: restart apache2
   become: true
-  ansible.builtin.git:
     name:
       - apache2
     state: present
