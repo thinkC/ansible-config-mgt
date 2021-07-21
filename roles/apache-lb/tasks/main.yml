@@ -39,12 +39,14 @@
 --- 
 - name: "Install apache"
   become: true
-  ansible.builtin.yum: 
+  ansible.builtin.apt: 
     name: 
       # - update
-      - httpd
-      # - libxml2-dev
-    state: present
+      - apache2
+      - libxml2-dev
+    state: latest
+  #apt:  name=apache2 update_cache=yes state=latest
+  
   
 - name: "enable rewrite module"
   become: true
@@ -65,21 +67,23 @@
 #   name: apache2
 #   state: present
 
-- name: restart apache2
+- name: "restart apache2"
   ansible.builtin.service:
     name: apache2
-    state: present
+    state: restarted
 
-- name: "copy to over-write"
+- name: "copy 000-default.conf"
+  become: true
   command: "cp -r  /home/ubuntu/backup/000-default.conf. /etc/apache2/sites-available/"
-  name: "copy 000-default.conf"
+  
 
 # - name: "restart apache2"
 #   become: true
 #   name: apache2
 #   state: present
 
-- name: restart apache2
+- name: "restart apache2"
+  become: true
   ansible.builtin.service:
     name: apache2
-    state: present
+    state: restarted
