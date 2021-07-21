@@ -139,6 +139,10 @@
   become: true
   apache2_module: name=lbmethod_bytraffic state=present
 
+  handlers:
+    - name: restart apache2
+      service: name=apache2 state=restarted
+
 
 # - apache2_module:
 #     become: true
@@ -165,22 +169,3 @@
 #     ignore_configcheck: True
 
 
-# - name: Update repositories cache and install "foo" package
-#   apt:
-#     name: foo
-#     update_cache: yes
-
-# - name: Remove "foo" package
-#   apt:
-#     name: foo
-#     state: absent
-
-# - name: Install the package "foo"
-#   apt:
-#     name: foo
-
-# - name: Install a list of packages
-#   apt:
-#     pkg:
-#     - foo
-#     - foo-tools
