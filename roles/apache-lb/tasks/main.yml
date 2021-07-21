@@ -139,9 +139,8 @@
   become: true
   apache2_module: name=lbmethod_bytraffic state=present
 
-  # handlers:
-  #   - name: restart apache2
-  #     service: name=apache2 state=restarted
+- name: restart apache2
+  service: name=apache2 state=restarted
 
 
 # - apache2_module:
