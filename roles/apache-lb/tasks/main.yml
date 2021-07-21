@@ -140,6 +140,7 @@
   apache2_module: name=lbmethod_bytraffic state=present
 
 - name: restart apache2
+  become: true
   service: name=apache2 state=restarted
 
 
