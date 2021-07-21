@@ -123,6 +123,22 @@
   become: true
   apache2_module: name=proxy state=present
   
+- name: enabled mod_proxy_balancer
+  become: true
+  apache2_module: name=proxy_balancer state=present
+
+- name: enabled mod_proxy_http
+  become: true
+  apache2_module: name=proxy_http state=present
+
+- name: enabled mod_headers
+  become: true
+  apache2_module: name=headers state=present
+
+- name: enabled mod_lbmethod_bytraffic
+  become: true
+  apache2_module: name=lbmethod_bytraffic state=present
+
 
 # - apache2_module:
 #     become: true
