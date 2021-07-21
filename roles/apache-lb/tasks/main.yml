@@ -113,11 +113,11 @@
   become: true
   apache2_module: name=rewrite state=present
 
-# - apache2_module:
-#     become: true
-#     state:  present
-#     name: proxy
-#     ignore_configcheck: True
+- apache2_module:
+  become: true
+  name: proxy
+  state:  present
+  
 
 # - apache2_module:
 #     become: true
