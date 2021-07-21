@@ -102,12 +102,16 @@
     name: libxml2-dev
     state: present
 
-- name: Enable rewrite module
-  apache2_module:
-    become: true
-    state:  present
-    name: rewrite
-    ignore_configcheck: True
+# - name: Enable rewrite module
+#   apache2_module:
+#     become: true
+#     state:  present
+#     name: rewrite
+#     ignore_configcheck: True
+
+- name: enabled mod_rewrite
+  become: true
+  apache2_module: name=rewrite state=present
 
 # - apache2_module:
 #     become: true
