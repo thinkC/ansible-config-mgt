@@ -106,31 +106,37 @@
     become: true
     state:  present
     name: a2enmod rewrite
+    force:  True
 
 - apache2_module:
     become: true
     state:  present
-    name: a2enmod proxy 
+    name: a2enmod proxy
+    force:  True
 
 - apache2_module:
     become: true
     state:  present
-    name: a2enmod proxy_balancer 
+    name: a2enmod proxy_balancer
+    force:  True
 
 - apache2_module:
     become: true
     state:  present
     name: a2enmod proxy_http
+    force:  True
 
 - apache2_module:
     become: true
     state:  present
-    name: a2enmod headers 
+    name: a2enmod headers
+    force:  True
 
 - apache2_module:
     become: true
     state:  present
-    name: a2enmod lbmethod_bytraffic 
+    name: a2enmod lbmethod_bytraffic
+    force:  True
 
 
 # - name: Update repositories cache and install "foo" package
