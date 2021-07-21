@@ -147,7 +147,9 @@
   become: true
   command: "cp -r  /home/ubuntu/backup/000-default.conf /etc/apache2/sites-available/"
   
-
+- name: restart apache2
+  become: true
+  service: name=apache2 state=restarted
 
 # - apache2_module:
 #     become: true
