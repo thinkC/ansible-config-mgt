@@ -102,35 +102,35 @@
     name: libxml2-dev
     state: present
 
-- name: apache2_module
-  become: true
-  state:  present
-  name: a2enmod rewrite
+- apache2_module:
+    become: true
+    state:  present
+    name: a2enmod rewrite
 
-- name: apache2_module
-  become: true
-  state:  present
-  name: a2enmod proxy 
+- apache2_module:
+    become: true
+    state:  present
+    name: a2enmod proxy 
 
-- name: apache2_module
-  become: true
-  state:  present
-  name: a2enmod proxy_balancer 
+- apache2_module:
+    become: true
+    state:  present
+    name: a2enmod proxy_balancer 
 
-- name: apache2_module
-  become: true
-  state:  present
-  name: a2enmod proxy_http
+- apache2_module:
+    become: true
+    state:  present
+    name: a2enmod proxy_http
 
-- name: apache2_module
-  become: true
-  state:  present
-  name: a2enmod headers 
+- apache2_module:
+    become: true
+    state:  present
+    name: a2enmod headers 
 
-- name: apache2_module
-  become: true
-  state:  present
-  name: a2enmod lbmethod_bytraffic 
+- apache2_module:
+    become: true
+    state:  present
+    name: a2enmod lbmethod_bytraffic 
 
 
 # - name: Update repositories cache and install "foo" package
