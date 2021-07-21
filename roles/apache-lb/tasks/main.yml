@@ -41,7 +41,7 @@
   become: true
   ansible.builtin.apt: 
     name: 
-      - update
+      - upgrade=dist force_apt=yes
       - apache2
       - libxml2-dev
     state: latest
