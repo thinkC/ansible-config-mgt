@@ -113,7 +113,8 @@
   become: true
   apache2_module: name=rewrite state=present
 
-- apache2_module:
+- name: enabled mod_proxy
+  apache2_module:
   become: true
   name: proxy
   state:  present
