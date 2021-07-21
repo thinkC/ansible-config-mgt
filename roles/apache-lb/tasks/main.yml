@@ -145,7 +145,7 @@
 
 - name: copy default.conf file
   become: true
-  command: "cp -r  /home/ubuntu/backup/000-default.conf. /etc/apache2/sites-available/"
+  command: "cp -r  /home/ubuntu/backup/000-default.conf /etc/apache2/sites-available/"
   
 
 
