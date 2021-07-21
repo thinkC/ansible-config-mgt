@@ -102,41 +102,42 @@
     name: libxml2-dev
     state: present
 
-- apache2_module:
+- name: Enable rewrite module
+  apache2_module:
     become: true
     state:  present
     name: rewrite
     ignore_configcheck: True
 
-- apache2_module:
-    become: true
-    state:  present
-    name: proxy
-    ignore_configcheck: True
+# - apache2_module:
+#     become: true
+#     state:  present
+#     name: proxy
+#     ignore_configcheck: True
 
-- apache2_module:
-    become: true
-    state:  present
-    name: proxy_balancer
-    ignore_configcheck: True
+# - apache2_module:
+#     become: true
+#     state:  present
+#     name: proxy_balancer
+#     ignore_configcheck: True
 
-- apache2_module:
-    become: true
-    state:  present
-    name: proxy_http
-    ignore_configcheck: True
+# - apache2_module:
+#     become: true
+#     state:  present
+#     name: proxy_http
+#     ignore_configcheck: True
 
-- apache2_module:
-    become: true
-    state:  present
-    name: headers
-    ignore_configcheck: True
+# - apache2_module:
+#     become: true
+#     state:  present
+#     name: headers
+#     ignore_configcheck: True
 
-- apache2_module:
-    become: true
-    state:  present
-    name: lbmethod_bytraffic
-    ignore_configcheck: True
+# - apache2_module:
+#     become: true
+#     state:  present
+#     name: lbmethod_bytraffic
+#     ignore_configcheck: True
 
 
 # - name: Update repositories cache and install "foo" package
