@@ -96,6 +96,11 @@
     name: apache2
     state: present
 
+- name: Install libxml2-dev
+  become: true
+  apt:
+    name: libxml2-dev
+    state: present
 # - name: Update repositories cache and install "foo" package
 #   apt:
 #     name: foo
