@@ -3,3 +3,4 @@
   roles:
     #  - webserver
      - apache-lb
+     - nginx-lb
