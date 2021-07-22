@@ -144,7 +144,11 @@
   become: true
   service: name=apache2 state=restarted
 
-
+- name: choose Load Balancer
+  vars:
+    enable_apache_lb: false
+    enable_nginx_lb: false
+    load_balancer_is_required: false
 
 
 
