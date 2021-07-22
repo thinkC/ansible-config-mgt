@@ -96,32 +96,21 @@
     name: apache2
     state: present
 
-- name: Install libxml2-dev
-  become: true
-  apt:
-    name: libxml2-dev
-    state: present
+# - name: Install libxml2-dev
+#   become: true
+#   apt:
+#     name: libxml2-dev
+#     state: present
 
-# - name: Enable rewrite module
-#   apache2_module:
-#     become: true
-#     state:  present
-#     name: rewrite
-#     ignore_configcheck: True
 
-- name: enabled mod_rewrite
-  become: true
-  apache2_module: name=rewrite state=present
+# - name: enabled mod_rewrite
+#   become: true
+#   apache2_module: name=rewrite state=present
+
 
 # - name: enabled mod_proxy
-#   apache2_module:
 #   become: true
-#   name: proxy
-#   state:  present
-
-- name: enabled mod_proxy
-  become: true
-  apache2_module: name=proxy state=present
+#   apache2_module: name=proxy state=present
   
 # - name: enabled mod_proxy_balancer
 #   become: true
