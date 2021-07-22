@@ -90,12 +90,16 @@
 
 --- 
 
-- name: Install apache httpd  (state=present is optional)
-  become: true
-  apt:
-    name: apache2
-    state: present
+# - name: Install apache httpd  (state=present is optional)
+#   become: true
+#   apt:
+#     name: apache2
+#     state: present
 
+- name: Install apache httpd 
+  become: true
+  apt:  name=apache2 update_cache=yes state=latest
+    
 - name: Install libxml2-dev
   become: true
   apt:
