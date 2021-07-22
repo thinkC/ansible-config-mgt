@@ -5,27 +5,38 @@
   become: true
   apt:  name=nginx update_cache=yes state=latest
     
-- name: enabled nginx
-  become: true
-  nginx: name=nginx state=present
+# - name: enabled nginx
+#   become: true
+#   nginx: name=nginx state=present
 
-- name: restart nginx
-  become: true
-  service: name=nginx state=restarted
+# - name: restart nginx
+#   become: true
+#   service: name=nginx state=restarted
 
-- name: copy load_balancer.conf file
-  become: true
-  command: "cp -r  /home/ubuntu/backup/load_balancer.conf /etc/nginx/sites-available/"
+# - name: copy load_balancer.conf file
+#   become: true
+#   command: "cp -r  /home/ubuntu/backup/load_balancer.conf /etc/nginx/sites-available/"
 
-- name: copy load_balancer.conf file
-  become: true
-  command: 
-    -  "cd /etc/nginx/sites-enabled/"
-    -  "sudo ln -s ../sites-available/load_balancer.conf ."
+# - name: copy load_balancer.conf file
+#   become: true
+#   command: 
+#     -  "cd /etc/nginx/sites-enabled/"
+#     -  "sudo ln -s ../sites-available/load_balancer.conf ."
   
-- name: restart nginx
-  become: true
-  service: name=nginx state=restarted
+# - name: restart nginx
+#   become: true
+#   service: name=nginx state=restarted
+
+
+
+
+
+
+
+
+
+
+
 
 # - name: choose Load Balancer
 #   vars:
