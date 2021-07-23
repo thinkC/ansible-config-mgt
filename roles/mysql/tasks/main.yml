@@ -1,26 +1,55 @@
 ---
-# Variable configuration.
-- include_tasks: variables.yml
+# tasks file for mysql
 
-# Setup/install tasks.
-- include_tasks: setup-RedHat.yml
-  when: ansible_os_family == 'RedHat'
+- name: install mysql 
+  ansible.builtin.apt:
+    name: mysql-server
+    state: present
 
-- include_tasks: setup-Debian.yml
-  when: ansible_os_family == 'Debian'
+- name: ensure mysql is started and enabled
+  ansible.builtin.service:
+     name: mysql
+     state: started 
+     enabled: yes
 
-- include_tasks: setup-Archlinux.yml
-  when: ansible_os_family == 'Archlinux'
+- name: create /var/lib/mysql/mysql.sock
+  ansible.builtin.file:
+    path: /var/lib/mysql/mysql.sock
+    state: touch
 
-- name: Check if MySQL packages were installed.
-  set_fact:
-    mysql_install_packages: "{{ (rh_mysql_install_packages is defined and rh_mysql_install_packages.changed)
-      or (deb_mysql_install_packages is defined and deb_mysql_install_packages.changed)
-      or (arch_mysql_install_packages is defined and arch_mysql_install_packages.changed) }}"
+- name: create database
+  community.mysql.mysql_db:
+    name: homestead
+    collation: utf8_general_ci
+    encoding: utf8
+    state: present
 
-# Configure MySQL.
-- include_tasks: configure.yml
-- include_tasks: secure-installation.yml
-- include_tasks: databases.yml
-- include_tasks: users.yml
-- include_tasks: replication.yml
+- name: create user
+  community.mysql.mysql_user:
+    name: homestead
+    host: '0.0.0.0'
+    password: sePret^i
+    priv: '*.*:ALL,GRANT'
+    state: present
+
+
+- name: update /ect/my.cf for bind-address
+  ansible.builtin.template:
+    src: templates/my.cnf.j2
+    dest: /etc/mysql/mysql.conf.d/mysqld.cnf
+  notify: Restart mysql
+
+# - name: clone tooling repository
+#   ansible.builtin.git:
+#    repo: https://github.com/Livingstone95/tooling.git
+#    clone: yes
+#    dest: /home/ansadmin/tooling
+
+# - name: import tooling-db.sql
+#   mysql_db:
+#     state: import
+#     name: tooling-db
+#     target: /home/ansadmin/tooling/tooling-db.sql
+
+- import_tasks: configure-firewall.yml
+
