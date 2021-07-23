@@ -1,6 +1,13 @@
+# ---
+# - hosts: uat-webservers
+#   roles:
+#     #  - webserver
+#      - apache-lb
+#     #  - nginx-lb
+
+
+
 ---
 - hosts: uat-webservers
   roles:
-    #  - webserver
-     - apache-lb
-    #  - nginx-lb
+     - webserver
