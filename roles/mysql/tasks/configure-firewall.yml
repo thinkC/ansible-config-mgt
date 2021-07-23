@@ -1,5 +1,5 @@
 - name: install firewalld
-  ansible.builtin.apt:
+  ansible.builtin.yum:
      name: firewalld
      state: latest
 
