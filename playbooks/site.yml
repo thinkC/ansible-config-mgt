@@ -68,6 +68,10 @@
 - name: Webserver assignment
   import_playbook: ../static-assignments/uat-webservers.yml
 
+-  hosts: uat-mysqlserver
+- name: mysql server assignment
+  import_playbook: ../static-assignments/uat-webservers.yml
+
 
 # ---
 # - hosts: all
