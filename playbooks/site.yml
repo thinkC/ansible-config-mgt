@@ -70,7 +70,7 @@
 
 -  hosts: uat-mysqlserver
 - name: mysql server assignment
-  import_playbook: ../static-assignments/uat-webservers.yml
+  import_playbook: ../static-assignments/uat-mysqlserver.yml
 
 
 # ---
