@@ -58,7 +58,7 @@
   become: true
   command: cp -r /var/www/html/html/ /var/www/
 
-- name: Started httpd if not started
+- name: Start httpd if not started
   become: true
   name: httpd
   state: started
