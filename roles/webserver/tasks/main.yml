@@ -70,5 +70,9 @@
   service:
    name: httpd
    state: started
-
+- name: recursively remove /var/www/html/html/ directory
+  file:
+   path: /var/www/html/html
+   state: absent
+   
 
