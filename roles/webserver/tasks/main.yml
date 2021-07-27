@@ -41,6 +41,7 @@
   yum:
     name: httpd
     state: present
+    update_cache: yes
     enabled: yes
 
 - name: Install git
