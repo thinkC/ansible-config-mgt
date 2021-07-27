@@ -60,7 +60,7 @@
 
 - name: Started httpd if not started
   become: true
-  nane: httpd
+  name: httpd
   state: started
 
 
