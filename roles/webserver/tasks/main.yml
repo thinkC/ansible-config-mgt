@@ -35,39 +35,32 @@
 #     state: absent
 
 
-
 ---
-- name: install apache
+- name: Install Apache on Web1-UAT and Web2-UAT
   become: true
-  ansible.builtin.yum:
-    name: "httpd"
+  yum:
+    name: httpd
     state: present
+    enabled: yes
 
-- name: install git
+- name: Install git
   become: true
-  ansible.builtin.yum:
-    name: "git"
+  yum:
+    name: git
     state: present
-
-- name: clone a repo
+- name: Clone git Repository
   become: true
-  ansible.builtin.git:
+  git:
     repo: https://github.com/thinkC/tooling.git
     dest: /var/www/html
     force: yes
-
 - name: copy html content to one level up
   become: true
   command: cp -r /var/www/html/html/ /var/www/
 
-- name: Start service httpd, if not started
+- name: Started httpd if not started
   become: true
-  ansible.builtin.service:
-    name: httpd
-    state: started
+  nane: httpd
+  state: started
 
-- name: recursively remove /var/www/html/html/ directory
-  become: true
-  ansible.builtin.file:
-    path: /var/www/html/html
-    state: absent
+
