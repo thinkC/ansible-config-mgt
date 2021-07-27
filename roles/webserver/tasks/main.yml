@@ -60,7 +60,8 @@
 
 - name: Start httpd if not started
   become: true
-  name: httpd
-  state: started
+  service:
+   name: httpd
+   state: started
 
 
