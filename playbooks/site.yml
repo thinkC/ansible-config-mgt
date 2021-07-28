@@ -61,8 +61,8 @@
   tasks:
   #import_playbook: ../static-assignments/common.yml 
    include: ../dynamic-assignments/env-vars.yml
-   tags:
-    - always
+  tags:
+   - always
 
 # -  hosts: uat-webservers
 # - name: Webserver assignment
