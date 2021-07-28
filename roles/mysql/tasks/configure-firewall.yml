@@ -1,5 +1,5 @@
 - name: install firewalld
-  ansible.builtin.yum:
+  ansible.builtin.apt:
      name: firewalld
      state: latest
 
@@ -10,20 +10,23 @@
      enabled: yes
 
 - name: permit traffic in public zone for https service
-  ansible.posix.firewalld:
+  #ansible.posix.firewalld:
+  firewalld:
     zone: public
     service: https
     permanent: yes
     state: enabled   
 
 - name: Allow port 8080
-  ansible.posix.firewalld:
+  #ansible.posix.firewalld:
+  firewalld:
     state: enabled
     port: 3306/tcp
     permanent: yes
 
 - name: permit traffic in public zone for http service
-  ansible.posix.firewalld:
+  #ansible.posix.firewalld:
+  firewalld:
     zone: public
     service: http
     permanent: yes
