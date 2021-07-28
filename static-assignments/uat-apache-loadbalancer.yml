@@ -1,4 +1,4 @@
 ---
-- hosts: uat-mysqlserver
+- hosts: uat-apache-loadbalancer
   roles:
      - apache-lb
