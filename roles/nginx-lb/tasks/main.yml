@@ -14,17 +14,17 @@
 #   become: true
 #   service: name=nginx state=restarted
 
-- name: copy load_balancer.conf file
-  become: true
-  ansible.builtin.copy:
-   src: /home/ubuntu/ansible-config-mgt/downloads/load_balancer.conf
-   dest: /etc/nginx/sites-available/
+# - name: copy load_balancer.conf file
+#   become: true
+#   ansible.builtin.copy:
+#    src: /home/ubuntu/ansible-config-mgt/downloads/load_balancer.conf
+#    dest: /etc/nginx/sites-available/
 
-- name: copy load_balancer.conf file
-  become: true
-  ansible.builtin.copy:
-   src: /home/ubuntu/ansible-config-mgt/downloads/load_balancer.conf
-   dest: /etc/nginx/sites-enabled/
+# - name: copy load_balancer.conf file
+#   become: true
+#   ansible.builtin.copy:
+#    src: /home/ubuntu/ansible-config-mgt/downloads/load_balancer.conf
+#    dest: /etc/nginx/sites-enabled/
 
 # - name: Remove default site
 #   become: true
@@ -33,13 +33,13 @@
 #    state: absent
  
 
-- name: linking load_balancer.conf file to sites enabled
-  become: true
-  ansible.builtin.file:
-   src: /etc/nginx/sites-enabled
-   #dest: /etc/nginx/sites-available/load_balancer.conf
-   dest: /etc/nginx/sites-available
-   state: link
+# - name: linking load_balancer.conf file to sites enabled
+#   become: true
+#   ansible.builtin.file:
+#    src: /etc/nginx/sites-available
+#    #dest: /etc/nginx/sites-available/load_balancer.conf
+#    dest: /etc/nginx/sites-enabled
+#    state: link
 
 
 
@@ -47,9 +47,9 @@
   #   -  "cd /etc/nginx/sites-enabled/"
   #   -  "ln -s ../sites-available/load_balancer.conf ."
   
-- name: restart nginx
-  become: true
-  service: name=nginx state=restarted
+# - name: restart nginx
+#   become: true
+#   service: name=nginx state=restarted
 
 
 
