@@ -6,9 +6,9 @@
 - name: restasrt and enable nginx
   become: true
   ansible.builtin.service:
-  name: nginx 
-  state: started 
-  enabled: yes
+   name: nginx 
+   state: started 
+   enabled: yes
 
 # - name: restart nginx
 #   become: true
