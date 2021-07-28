@@ -113,8 +113,12 @@
   ansible.builtin.copy:
    src: /home/ubuntu/downloads/my.cnf.j2
    dest: /etc/mysql/mysql.conf.d/mysqld.cnf
-  notify: Restart mysql
+  # notify: Restart mysql
 
+- name: restart mysql
+  become: true
+  ansible.builtin.service:
+     name: mysql
+     state: started 
 
-  
 - import_tasks: configure-firewall.yml
