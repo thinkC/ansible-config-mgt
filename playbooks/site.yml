@@ -61,7 +61,7 @@
   hosts: all
   tasks:
   #import_playbook: ../static-assignments/common.yml 
-  - include_task: ../dynamic-assignments/env-vars.yml
+  - include_tasks: ../dynamic-assignments/env-vars.yml
   tags:
     - always
 
