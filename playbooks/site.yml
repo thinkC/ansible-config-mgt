@@ -73,7 +73,7 @@
 # - name: MySQL assignment
 #   import_playbook: ../static-assignments/uat-mysqlserver.yml
 
-- hosts: uat-mysqlserver
+- hosts: uat-apache-loadbalancer
 - name: Apache Load Blancer Assignment
   import_playbook: ../static-assignments/uat-apache-loadbalancer.yml
 
