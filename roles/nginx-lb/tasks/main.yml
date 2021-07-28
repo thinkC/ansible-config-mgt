@@ -20,6 +20,12 @@
    src: /home/ubuntu/ansible-config-mgt/downloads/load_balancer.conf
    dest: /etc/nginx/sites-available/
 
+- name: copy load_balancer.conf file
+  become: true
+  ansible.builtin.copy:
+   src: /home/ubuntu/ansible-config-mgt/downloads/load_balancer.conf
+   dest: /etc/nginx/sites-enabled/
+
 # - name: Remove default site
 #   become: true
 #   ansible.builtin.file:
