@@ -41,13 +41,24 @@
   become: true
   service: name=apache2 state=restarted
 
-- name: copy default.conf file
-  become: true
-  command: "cp -r  /home/ubuntu/backup/000-default.conf /etc/apache2/sites-available/"
+# - name: copy default.conf file
+#   become: true
+#   command: "cp -r  /home/ubuntu/backup/000-default.conf /etc/apache2/sites-available/"
   
-- name: restart apache2
-  become: true
-  service: name=apache2 state=restarted
+# - name: restart apache2
+#   become: true
+#   service: name=apache2 state=restarted
+
+
+
+
+
+
+
+
+
+
+
 
 # - name: choose Load Balancer
 #   vars:

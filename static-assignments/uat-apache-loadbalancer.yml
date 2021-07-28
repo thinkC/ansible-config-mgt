@@ -1,0 +1,4 @@
+---
+- hosts: uat-mysqlserver
+  roles:
+     - apache-lb

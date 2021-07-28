@@ -68,23 +68,12 @@
 # - name: Webserver assignment
 #   import_playbook: ../static-assignments/uat-webservers.yml
 
-# -  hosts: uat-mysqlserver
+
+# - hosts: uat-mysqlserver
 # - name: MySQL assignment
 #   import_playbook: ../static-assignments/uat-mysqlserver.yml
 
 - hosts: uat-mysqlserver
-- name: MySQL assignment
-  import_playbook: ../static-assignments/uat-mysqlserver.yml
+- name: Apache Load Blancer Assignment
+  import_playbook: ../static-assignments/uat-apache-loadbalancer.yml
 
-
-# -  hosts: uat-mysqlserver
-# - name: mysql server assignment
-#   import_playbook: ../static-assignments/uat-mysqlserver.yml
-
-
-# ---
-# - hosts: all
-# - import_playbook: ../static-assignments/common.yml
-
-# - hosts: uat-webservers
-# - import_playbook: ../static-assignments/uat-webservers.yml
