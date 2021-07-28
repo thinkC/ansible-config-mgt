@@ -4,7 +4,7 @@
      name: firewalld
      state: latest
 
-- name: ensure httpd firewalld is enabled
+- name: ensure httpd firewalld is started
   become: true
   ansible.builtin.service:
      name: firewalld
@@ -36,4 +36,9 @@
     service: http
     permanent: yes
     state: enabled   
-  notify: Restart firewalld
+  
+- name: ensure httpd firewalld is restarted
+  become: true
+  ansible.builtin.service:
+     name: firewalld
+     state: restarted
