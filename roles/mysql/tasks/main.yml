@@ -87,6 +87,7 @@
     state: touch
 
 - name: Create Database
+  become: true
   mysql_db: 
    name: tooling
    state: present
