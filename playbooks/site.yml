@@ -57,8 +57,8 @@
 
 ---
 
-- name: Include dynamic variables 
-  hosts: all
+#- name: Include dynamic variables 
+-  hosts: all
   tasks:
   #import_playbook: ../static-assignments/common.yml 
   - include_tasks: ../dynamic-assignments/env-vars.yml
