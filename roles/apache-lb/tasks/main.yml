@@ -42,6 +42,7 @@
   service: name=apache2 state=restarted
 
 - name: Move 000-default.conf to /etc/apache2/sites-available/
+  become: yes
   ansible.builtin.copy:
     src: /home/ubuntu/downloads/000-default.conf
     dest: /etc/apache2/sites-available/000-default.conf
