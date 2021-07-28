@@ -1,17 +1,15 @@
 --- 
-
-
 - name: Install nginx
   become: true
   apt:  name=nginx update_cache=yes state=latest
     
-# - name: enabled nginx
-#   become: true
-#   nginx: name=nginx state=present
+- name: enabled nginx
+  become: true
+  nginx: name=nginx state=present
 
-# - name: restart nginx
-#   become: true
-#   service: name=nginx state=restarted
+- name: restart nginx
+  become: true
+  service: name=nginx state=restarted
 
 # - name: copy load_balancer.conf file
 #   become: true

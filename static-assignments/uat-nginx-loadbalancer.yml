@@ -1,0 +1,4 @@
+---
+- hosts: uat-nginx-loadbalancer
+  roles:
+     - nginx-lb
