@@ -10,8 +10,8 @@
         #ServerName www.example.com
 
         <Proxy "balancer://mycluster">
-               BalancerMember http://{{ ansible_host }}:80 loadfactor=5 timeout=1
-               BalancerMember http://{{ ansible_host }}:80 loadfactor=5 timeout=1
+               BalancerMember http://{{ host }}:80 loadfactor=5 timeout=1
+               BalancerMember http://{{ host }}:80 loadfactor=5 timeout=1
                ProxySet lbmethod=bytraffic
                # ProxySet lbmethod=byrequests
         </Proxy>
