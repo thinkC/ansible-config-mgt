@@ -62,16 +62,7 @@
 'libmysqlclient-dev', 'python3-dev', 'python3-mysqldb']
    state: present
    update_cache: True
-  # with_items:
-  #   - mysql-server
-  #   - python3-pip
-  #   - libmysqlclient-dev
-  #   - python3-dev
-  #   - python3-mysqldb
-
-# - name: Install mySQL
-#   become: true
-#   apt: name=mysql-server update_cache=yes state=latest
+  
 
 - name: ensure mysql is started and enabled
   become: true
