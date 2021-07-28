@@ -55,11 +55,15 @@
 
 
 ---
+# - name: Install mySQL
+#   become: true
+#   ansible.builtin.apt:
+#    name: mysql-server
+#    state: present
+
 - name: Install mySQL
   become: true
-  ansible.builtin.apt:
-   name: mysql-server
-   state: present
+  apt: name=mysql-server update_cache=yes state=latest
 
 - name: ensure mysql is started and enabled
   become: true
