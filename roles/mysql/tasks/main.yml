@@ -77,6 +77,7 @@
    state: present
 
 - name: Create Application DB user
+  mysql_user:
    name: webaccess
    password: sePret^i
    host: '172.31.60.208'
