@@ -16,7 +16,10 @@
 
 - name: copy load_balancer.conf file
   become: true
-  command: "cp -rf /home/ubuntu/ansible-config-mgt/downloads/load_balancer.conf /etc/nginx/sites-available/"
+  ansible.builtin.copy:
+   src: /home/ubuntu/ansible-config-mgt/downloads/load_balancer.conf
+   dest: /etc/nginx/sites-available/
+ 
 
 # - name: linking load_balancer.conf file
 #   become: true
