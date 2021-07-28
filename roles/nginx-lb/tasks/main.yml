@@ -36,9 +36,9 @@
 - name: linking load_balancer.conf file to sites enabled
   become: true
   ansible.builtin.file:
-   src: /etc/nginx/sites-enabled/
+   src: /etc/nginx/sites-available
    #dest: /etc/nginx/sites-available/load_balancer.conf
-   dest: /etc/nginx/sites-available/
+   dest: /etc/nginx/sites-enabled
    state: link
 
 
