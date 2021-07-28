@@ -77,8 +77,8 @@
 - hosts: uat-mysqlserver
 - name: MySQL assignment
   import_playbook: ../static-assignments/uat-mysqlserver.yml
-  roles:
-   - { role: mysql}
+- roles:
+   - role: mysql
 
 # -  hosts: uat-mysqlserver
 # - name: mysql server assignment
