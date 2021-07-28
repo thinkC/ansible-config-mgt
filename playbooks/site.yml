@@ -60,8 +60,8 @@
 - name: Include dynamic variables 
   tasks:
   #import_playbook: ../static-assignments/common.yml 
-  include_task: ../dynamic-assignments/env-vars.yml
-  tags:
+   include: ../dynamic-assignments/env-vars.yml
+   tags:
     - always
 
 # -  hosts: uat-webservers
