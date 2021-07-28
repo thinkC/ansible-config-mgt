@@ -41,13 +41,18 @@
   become: true
   service: name=apache2 state=restarted
 
+- name: Move 000-default.conf to /etc/apache2/sites-available/
+  template: 
+    src: templates/000-default.conf.j2
+    dest: /etc/apache2/sites-available/000-default.conf
+
 # - name: copy default.conf file
 #   become: true
 #   command: "cp -r  /home/ubuntu/backup/000-default.conf /etc/apache2/sites-available/"
   
-# - name: restart apache2
-#   become: true
-#   service: name=apache2 state=restarted
+- name: restart apache2
+  become: true
+  service: name=apache2 state=restarted
 
 
 
