@@ -14,15 +14,15 @@
 #   become: true
 #   service: name=nginx state=restarted
 
-# - name: copy load_balancer.conf file
-#   become: true
-#   command: "cp -r  /home/ubuntu/backup/load_balancer.conf /etc/nginx/sites-available/"
+- name: copy load_balancer.conf file
+  become: true
+  command: "cp -r /home/ubuntu/ansible-config-mgt/downloads/load_balancer.conf /etc/nginx/sites-available/"
 
-# - name: copy load_balancer.conf file
+# - name: linking load_balancer.conf file
 #   become: true
-#   command: 
+#   command:
 #     -  "cd /etc/nginx/sites-enabled/"
-#     -  "sudo ln -s ../sites-available/load_balancer.conf ."
+#     -  "ln -s ../sites-available/load_balancer.conf ."
   
 # - name: restart nginx
 #   become: true
