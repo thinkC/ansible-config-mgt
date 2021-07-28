@@ -21,6 +21,7 @@
    dest: /etc/nginx/sites-available/
 
 - name: Remove default site
+  become: true
   ansible.builtin.file:
    path: /etc/nginx/sites-enabled/default
    state: absent
