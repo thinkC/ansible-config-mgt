@@ -56,17 +56,20 @@
 
 ---
 - name: Install mySQL
+  become: true
   ansible.builtin.apt:
    name: mysql-server
    state: present
 
 - name: ensure mysql is started and enabled
+  become: true
   ansible.builtin.service:
      name: mysql
      state: started 
      enabled: yes
 
 - name: create /var/lib/mysql/mysql.sock
+  become: true
   ansible.builtin.file:
     path: /var/lib/mysql/mysql.sock
     state: touch
@@ -85,6 +88,7 @@
    state: present
 
 - name: update /ect/my.cf for bind-address
+  become: true
   template:
     src: templates/my.cnf.j2
     dest: /etc/mysql/mysql.conf.d/mysqld.cnf
