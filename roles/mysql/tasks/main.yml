@@ -85,7 +85,7 @@
    state: present
 
 - name: update /ect/my.cf for bind-address
-  ansible.builtin.template:
+  template:
     src: templates/my.cnf.j2
     dest: /etc/mysql/mysql.conf.d/mysqld.cnf
   notify: Restart mysql
