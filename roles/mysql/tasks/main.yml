@@ -57,7 +57,7 @@
 ---
 - name: Install mySQL and other dependencies
   become: true
-- apt:
+  apt:
    name: ['mysql-server', 'python3-pip', 
 'libmysqlclient-dev', 'python3-dev', 'python3-mysqldb']
    state: present
