@@ -111,7 +111,7 @@
 - name: update /ect/my.cf for bind-address
   become: true
   ansible.builtin.copy:
-   src: ~/downloads/my.cnf.j2
+   src: /home/ubuntu/downloads/my.cnf.j2
    dest: /etc/mysql/mysql.conf.d/mysqld.cnf
   notify: Restart mysql
 
