@@ -57,7 +57,7 @@
 ---  
 - apt:
   become: yes
-    name: ['mysql-server', 'python3-pip', 
+   name: ['mysql-server', 'python3-pip', 
 'libmysqlclient-dev', 'python3-dev', 'python3-mysqldb']
     state: present
     update_cache: True
