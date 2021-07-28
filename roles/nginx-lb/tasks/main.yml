@@ -38,6 +38,7 @@
   ansible.builtin.file:
    src: /etc/nginx/sites-available/load_balancer.conf
    dest: /etc/nginx/sites-enabled/
+   state: link
 
   # command:
   #   -  "cd /etc/nginx/sites-enabled/"
