@@ -108,5 +108,7 @@
     dest: /etc/mysql/mysql.conf.d/mysqld.cnf
   notify: Restart mysql
 
+
+
   
 - import_tasks: configure-firewall.yml
