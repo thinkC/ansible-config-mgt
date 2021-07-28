@@ -56,15 +56,16 @@
 
 ---
 - apt:
-    name: "{{ item }}"
+    name: ['mysql-server', 'python3-pip', 
+'libmysqlclient-dev', 'python3-dev', 'python3-mysqldb']
     state: present
     update_cache: True
-  with_items:
-    - mysql-server
-    - python3-pip
-    - libmysqlclient-dev
-    - python3-dev
-    - python3-mysqldb
+  # with_items:
+  #   - mysql-server
+  #   - python3-pip
+  #   - libmysqlclient-dev
+  #   - python3-dev
+  #   - python3-mysqldb
 
 # - name: Install mySQL
 #   become: true
