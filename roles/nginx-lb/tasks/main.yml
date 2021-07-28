@@ -3,13 +3,16 @@
   become: true
   apt:  name=nginx update_cache=yes state=latest
     
-- name: enabled nginx
+- name: restasrt and enable nginx
   become: true
-  nginx: name=nginx state=present
+  ansible.builtin.service:
+  name: nginx 
+  state: started 
+  enabled: yes
 
-- name: restart nginx
-  become: true
-  service: name=nginx state=restarted
+# - name: restart nginx
+#   become: true
+#   service: name=nginx state=restarted
 
 # - name: copy load_balancer.conf file
 #   become: true
