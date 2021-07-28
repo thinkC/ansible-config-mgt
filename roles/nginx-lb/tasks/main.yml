@@ -3,7 +3,7 @@
   become: true
   apt:  name=nginx update_cache=yes state=latest
     
-- name: restasrt and enable nginx
+- name: restart and enable nginx
   become: true
   ansible.builtin.service:
    name: nginx 
