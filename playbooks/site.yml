@@ -17,18 +17,18 @@
 # - name: MySQL assignment
 #   import_playbook: ../static-assignments/uat-mysqlserver.yml
 
-- hosts: uat-apache-loadbalancer
-- name: Apache Load Balancer Assignment
-  import_playbook: ../static-assignments/uat-apache-loadbalancer.yml
+# - hosts: uat-apache-loadbalancer
+# - name: Apache Load Balancer Assignment
+#   import_playbook: ../static-assignments/uat-apache-loadbalancer.yml
 
 # - hosts: lb
 # - name: Loadbalancers assignment
 #   import_playbook: ../static-assignments/loadbalancers.yml
 #   when: load_balancer_is_required 
 
-# - hosts: uat-nginx-loadbalancer
-# - name: Nginx Load Balancer Assignment
-#   import_playbook: ../static-assignments/uat-nginx-loadbalancer.yml
+- hosts: uat-nginx-loadbalancer
+- name: Nginx Load Balancer Assignment
+  import_playbook: ../static-assignments/uat-nginx-loadbalancer.yml
 
 
 
