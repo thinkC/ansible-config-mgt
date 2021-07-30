@@ -1,6 +1,4 @@
 --- 
-
-
 - name: Install apache httpd 
   become: true
   apt:  name=apache2 update_cache=yes state=latest
@@ -64,11 +62,8 @@
 - import_tasks: configure-firewall.yml
 
 
-
-
-
-
-
+enable_apache_lb: false
+load_balancer_is_required: false
 
 
 

@@ -26,11 +26,11 @@
 #    src: /home/ubuntu/ansible-config-mgt/downloads/load_balancer.conf
 #    dest: /etc/nginx/sites-enabled/
 
-- name: Remove default site
-  become: true
-  ansible.builtin.file:
-   path: /etc/nginx/sites-enabled/default
-   state: absent
+# - name: Remove default site
+#   become: true
+#   ansible.builtin.file:
+#    path: /etc/nginx/sites-enabled/default
+#    state: absent
  
 
 # - name: linking load_balancer.conf file to sites enabled
@@ -53,7 +53,8 @@
 
 
 
-
+enable_nginx_lb: false
+load_balancer_is_required: false
 
 
 
