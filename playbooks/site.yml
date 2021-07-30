@@ -13,13 +13,13 @@
 #   import_playbook: ../static-assignments/uat-webservers.yml
 
 
-- hosts: uat-mysqlserver
-- name: MySQL assignment
-  import_playbook: ../static-assignments/uat-mysqlserver.yml
+# - hosts: uat-mysqlserver
+# - name: MySQL assignment
+#   import_playbook: ../static-assignments/uat-mysqlserver.yml
 
-# - hosts: uat-apache-loadbalancer
-# - name: Apache Load Balancer Assignment
-#   import_playbook: ../static-assignments/uat-apache-loadbalancer.yml
+- hosts: uat-apache-loadbalancer
+- name: Apache Load Balancer Assignment
+  import_playbook: ../static-assignments/uat-apache-loadbalancer.yml
 
 # - hosts: lb
 # - name: Loadbalancers assignment
