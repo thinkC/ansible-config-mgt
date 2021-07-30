@@ -49,6 +49,7 @@
   ansible.builtin.yum:
     name: "httpd"
     state: present
+    enabled: yes
 
 - name: Install git
   become: true

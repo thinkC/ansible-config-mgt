@@ -1,16 +1,16 @@
 ---
-- hosts: all
-- name: Include dynamic variables 
-  # tasks:
-  #import_playbook: ../static-assignments/common.yml
-- name: Testing
-  import_playbook: ../dynamic-assignments/env-vars.yml
-  # tags:
-  #   - always
+# - hosts: all
+# - name: Include dynamic variables 
+#   # tasks:
+#   #import_playbook: ../static-assignments/common.yml
+# - name: Testing
+#   import_playbook: ../dynamic-assignments/env-vars.yml
+#   tags:
+#     - always
 
-# -  hosts: uat-webservers
-# - name: Webserver assignment
-#   import_playbook: ../static-assignments/uat-webservers.yml
+-  hosts: uat-webservers
+- name: Webserver assignment
+  import_playbook: ../static-assignments/uat-webservers.yml
 
 
 # - hosts: uat-mysqlserver
@@ -21,10 +21,10 @@
 # - name: Apache Load Balancer Assignment
 #   import_playbook: ../static-assignments/uat-apache-loadbalancer.yml
 
-- hosts: lb
-- name: Loadbalancers assignment
-  import_playbook: ../static-assignments/loadbalancers.yml
-  when: load_balancer_is_required 
+# - hosts: lb
+# - name: Loadbalancers assignment
+#   import_playbook: ../static-assignments/loadbalancers.yml
+#   when: load_balancer_is_required 
 
 # - hosts: uat-nginx-loadbalancer
 # - name: Nginx Load Balancer Assignment
