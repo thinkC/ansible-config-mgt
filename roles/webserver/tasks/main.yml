@@ -49,7 +49,6 @@
   ansible.builtin.yum:
     name: "httpd"
     state: present
-    # enabled: yes
 
 - name: Install git
   become: true
@@ -71,6 +70,7 @@
   service:
    name: httpd
    state: started
+   enabled: yes
 - name: recursively remove /var/www/html/html/ directory
   become: true
   file:
