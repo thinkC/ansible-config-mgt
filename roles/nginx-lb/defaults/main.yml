@@ -55,13 +55,10 @@
 
 
 
-  # enable_nginx_lb: false
-  # load_balancer_is_required: false
+  enable_nginx_lb: false
+  load_balancer_is_required: false
 
 
 
-- name: choose Load Balancer
-  vars:
-    enable_nginx_lb: false
-    load_balancer_is_required: false
+
 
