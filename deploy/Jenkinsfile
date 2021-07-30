@@ -17,5 +17,12 @@ pipeline {
         }
       }
     }
+      stage('Test1') {
+      steps {
+        script {
+          sh 'echo "Testing Stage1"'
+        }
+      }
+    }
     }
 }
