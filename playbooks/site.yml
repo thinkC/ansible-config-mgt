@@ -1,9 +1,8 @@
 ---
-- hosts: all
-- name: Include dynamic variables 
-  tasks:
+- name: Include dynamic variables
+  hosts: all
   #import_playbook: ../static-assignments/common.yml 
-  include: ../dynamic-assignments/env-vars.yml
+  import_playbook: ../dynamic-assignments/env-vars.yml
   tags:
     - always
 
@@ -41,7 +40,6 @@
 # - name: Apache Load Balancer Assignment
 #   import_playbook: ../static-assignments/uat-apache-loadbalancer.yml
 
-- hosts: lb
 - name: Loadbalancers assignment
   import_playbook: ../static-assignments/loadbalancers.yml
   when: load_balancer_is_required 
