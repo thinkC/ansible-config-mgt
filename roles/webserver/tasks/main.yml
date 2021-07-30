@@ -36,20 +36,20 @@
 
 
 ---
-- name: Install Apache on Web1-UAT and Web2-UAT
-  become: true
-  yum:
-    name: httpd
-    state: present
-    update_cache: yes
-    enabled: yes
-
-# - name: install apache
+# - name: Install Apache on Web1-UAT and Web2-UAT
 #   become: true
-#   ansible.builtin.yum:
-#     name: "httpd"
+#   yum:
+#     name: httpd
 #     state: present
+#     update_cache: yes
 #     enabled: yes
+
+- name: install Apache
+  become: true
+  ansible.builtin.yum:
+    name: "httpd"
+    state: present
+    # enabled: yes
 
 - name: Install git
   become: true
